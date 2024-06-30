@@ -22,6 +22,6 @@ public class LoggingAspect {
     @AfterReturning(value = "execution(* com.aop.employee.service.EmployeeService.*(..))", returning = "result")
     public void logAfterMethod(JoinPoint joinPoint, Object result) {
         logger.info("After Returning Method Executed: " + joinPoint.getSignature().getName());
-        logger.info("Result: " + result);
+        logger.info("Result: " + result);//
     }
 }
