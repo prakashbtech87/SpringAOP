@@ -16,12 +16,12 @@ public class LoggingAspect {
 
     @Before("execution(* com.employee.employeeaop.service.EmployeeService.*(..))")
     public void logBeforeMethod(JoinPoint joinPoint) {
-        logger.info("Method Called: " + joinPoint.getSignature().getName());
+        logger.info("Before Creating - Method Called: " + joinPoint.getSignature().getName());
     }
 
     @AfterReturning(value = "execution(* com.aop.employee.service.EmployeeService.*(..))", returning = "result")
     public void logAfterMethod(JoinPoint joinPoint, Object result) {
-        logger.info("Method Executed: " + joinPoint.getSignature().getName());
+        logger.info("After Returning Method Executed: " + joinPoint.getSignature().getName());
         logger.info("Result: " + result);
     }
 }
